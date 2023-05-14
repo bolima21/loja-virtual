@@ -11,6 +11,6 @@ import java.util.Date;
 public class Hello {
     @GetMapping("/")
     public String hello() {
-        return "olá mundo Spring"+new Date();
+        return "Hello World Spring "+new Date();
     }
 }
