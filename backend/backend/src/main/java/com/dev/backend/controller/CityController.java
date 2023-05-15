@@ -1,7 +1,7 @@
 package com.dev.backend.controller;
 
-import com.dev.backend.entity.State;
-import com.dev.backend.service.StateService;
+import com.dev.backend.entity.City;
+import com.dev.backend.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,29 +9,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/state")
-public class StateController {
+@RequestMapping("/api/city")
+public class CityController {
     @Autowired
-    private StateService stateService;
+    private CityService cityService;
     @GetMapping("/")
-    public List<State> searchAll(){
-        return stateService.searchAll();
+    public List<City> searchAll(){
+        return cityService.searchAll();
 
     }
     @PostMapping("/")
-    public State insert(@RequestBody State state){
-        return stateService.insert(state);
+    public City insert(@RequestBody City object){
+        return cityService.insert(object);
 
     }
 
     @PutMapping("/")
-    public State update(@RequestBody State state){
-        return stateService.update(state);
+    public City update(@RequestBody City object){
+        return cityService.update(object);
 
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> exclude (@PathVariable("id") Long id){
-        stateService.exclude(id);
+        cityService.exclude(id);
         return ResponseEntity.ok().build();
     }
 }
