@@ -18,10 +18,10 @@ public class CityService {
 
     }
 
-    public City insert(City city) {
-        city.setCreationDate(new Date());
-        City newCity = cityRepository.saveAndFlush(city);
-        return newCity;
+    public City insert(City object) {
+        object.setCreationDate(new Date());
+        City newObject = cityRepository.saveAndFlush(object);
+        return newObject;
     }
     public City update(City object) {
         object.setCreationDate(new Date());
